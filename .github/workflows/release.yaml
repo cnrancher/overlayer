@@ -10,7 +10,8 @@ permissions:
 
 env:
   REGISTRY: "${{ vars.PUBLIC_REGISTRY }}"
-  REGISTRY_TOKEN: "${{ secrets.REGISTRY_TOKEN }}"
+  USERNAME: "${{ secrets.TCR_USERNAME }}"
+  REGISTRY_TOKEN: "${{ secrets.TCR_TOKEN }}"
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:

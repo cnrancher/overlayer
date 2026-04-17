@@ -24,7 +24,7 @@ jobs:
         uses: golangci/golangci-lint-action@v9
       - name: Test
         run: |
-          make test
+          ./scripts/test.sh
   image-build:
     runs-on: 'org-cnrancher-runner-dind-x64'
     services:
