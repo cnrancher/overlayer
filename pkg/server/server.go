@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/STARRY-S/overlayer/pkg/config"
-	"github.com/STARRY-S/overlayer/pkg/utils"
+	"github.com/cnrancher/overlayer/pkg/config"
+	"github.com/cnrancher/overlayer/pkg/utils"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/http2"
 )

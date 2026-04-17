@@ -19,7 +19,7 @@ RUN --mount=type=cache,target=/go/pkg/mod/ \
     CGO_ENABLED=0 \
     go build \
     -buildmode=pie \
-    -ldflags="-extldflags='-static' -s -w -X github.com/STARRY-S/overlayer/pkg/utils.Version=${TAG} -X github.com/STARRY-S/overlayer/pkg/utils.Commit=${COMMIT}" \
+    -ldflags="-extldflags='-static' -s -w -X github.com/cnrancher/overlayer/pkg/utils.Version=${TAG} -X github.com/cnrancher/overlayer/pkg/utils.Commit=${COMMIT}" \
     -o /usr/local/bin/proxy \
     ./pkg/cmd
 RUN proxy version

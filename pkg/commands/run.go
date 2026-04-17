@@ -3,8 +3,8 @@ package commands
 import (
 	"fmt"
 
-	"github.com/STARRY-S/overlayer/pkg/config"
-	"github.com/STARRY-S/overlayer/pkg/server"
+	"github.com/cnrancher/overlayer/pkg/config"
+	"github.com/cnrancher/overlayer/pkg/server"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
