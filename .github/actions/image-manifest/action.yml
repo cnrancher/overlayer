@@ -8,12 +8,12 @@ runs:
       run: |-
         REPOSITORY=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')
         echo "REPOSITORY=$REPOSITORY" >> $GITHUB_ENV
-    - name: Login to ghcr.io
+    - name: Login to registry
       uses: docker/login-action@v3
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ env.REPOSITORY }}
-        password: ${{ env.GH_TOKEN }}
+        password: ${{ env.REGISTRY_TOKEN }}
     - name: Install Hangar
       uses: cnrancher/hangar/.github/actions/install-hangar@main
     - name: Create manifest list and push

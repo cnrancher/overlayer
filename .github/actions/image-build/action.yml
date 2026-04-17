@@ -14,12 +14,12 @@ runs:
           ARCH="arm64"
         fi
         echo "ARCH=$ARCH" >> $GITHUB_ENV
-    - name: Login to ghcr.io
+    - name: Login to registry
       uses: docker/login-action@v3
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ env.REPOSITORY }}
-        password: ${{ env.GH_TOKEN }}
+        password: ${{ env.REGISTRY_TOKEN }}
     - name: Setup QEMU
       uses: docker/setup-qemu-action@v3
     - name: Setup Docker Buildx

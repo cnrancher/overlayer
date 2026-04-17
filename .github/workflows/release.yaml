@@ -9,26 +9,27 @@ permissions:
   packages: write
 
 env:
-  REGISTRY: "ghcr.io"
+  REGISTRY: "${{ vars.PUBLIC_REGISTRY }}"
+  REGISTRY_TOKEN: "${{ secrets.REGISTRY_TOKEN }}"
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   github-release:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'org-cnrancher-runner-dind-x64'
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
       - name: GitHub Release
         uses: ./.github/actions/github-release
   image-build-amd64:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'org-cnrancher-runner-dind-x64'
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
       - name: Build Image
         uses: ./.github/actions/image-build
   image-build-arm64:
-    runs-on: 'ubuntu-24.04-arm'
+    runs-on: 'org-cnrancher-runner-dind-arm64'
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -36,7 +37,7 @@ jobs:
         uses: ./.github/actions/image-build
   image-manifest:
     needs: [ image-build-amd64, image-build-arm64 ]
-    runs-on: 'ubuntu-latest'
+    runs-on: 'org-cnrancher-runner-dind-x64'
     steps:
       - name: Checkout code
         uses: actions/checkout@v6

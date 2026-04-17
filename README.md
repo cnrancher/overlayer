@@ -1,8 +1,8 @@
 # Overlayer
 
-[![CI](https://github.com/STARRY-S/overlayer/actions/workflows/ci.yaml/badge.svg)](https://github.com/STARRY-S/overlayer/actions/workflows/ci.yaml)
-[![GitHub Release](https://img.shields.io/github/v/release/STARRY-S/overlayer?include_prereleases)](https://github.com/STARRY-S/overlayer/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/STARRY-S/overlayer)](https://goreportcard.com/report/github.com/STARRY-S/overlayer)
+[![CI](https://github.com/cnrancher/overlayer/actions/workflows/ci.yaml/badge.svg)](https://github.com/cnrancher/overlayer/actions/workflows/ci.yaml)
+[![GitHub Release](https://img.shields.io/github/v/release/cnrancher/overlayer?include_prereleases)](https://github.com/cnrancher/overlayer/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/cnrancher/overlayer)](https://goreportcard.com/report/github.com/cnrancher/overlayer)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Overlayer is a reverse proxy designed to reduce CDN traffic costs and provide security layer for registry servers.
@@ -25,7 +25,7 @@ flowchart TD
 ## Usage
 
 ```sh
-git clone https://github.com/STARRY-S/overlayer.git && cd overlayer
+git clone https://github.com/cnrancher/overlayer.git && cd overlayer
 cp config.example.yaml config.yaml
 # Edit configuration
 vim config.yaml
@@ -43,12 +43,12 @@ podman run -dit \
     --network host \
     --restart=always \
     --secret CDN_AUTH_TOKEN,type=env,target=BLOBS_CDN_AUTH_TOKEN \
-    ghcr.io/starry-s/overlayer:${VERSION} run -c=/config.yaml
+    registry.rancher.cn/cnrancher/overlayer:${VERSION} run -c=/config.yaml
 ```
 
 ## License
 
-Copyright 2026 STARRY-S
+Copyright 2026 SUSE Rancher
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
