@@ -19,21 +19,21 @@ jobs:
     runs-on: 'org-cnrancher-runner-dind-x64'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: GitHub Release
         uses: ./.github/actions/github-release
   image-build-amd64:
     runs-on: 'org-cnrancher-runner-dind-x64'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Build Image
         uses: ./.github/actions/image-build
   image-build-arm64:
     runs-on: 'org-cnrancher-runner-dind-arm64'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Build Image
         uses: ./.github/actions/image-build
   image-manifest:
@@ -41,6 +41,6 @@ jobs:
     runs-on: 'org-cnrancher-runner-dind-x64'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Image Manifest
         uses: ./.github/actions/image-manifest
